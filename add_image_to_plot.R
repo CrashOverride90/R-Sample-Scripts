@@ -1,0 +1,8 @@
+library(png)
+library(grid)
+library(ggplot2)
+file_url = paste0(getwd(),"/wheel.png")
+img <- readPNG(file_url)
+pdf("example.pdf", width = 4, height = 4)
+qplot(1:10, 1:10) + annotation_custom(rasterGrob(img, x = unit(0.1, "npc"), y = unit(0.1, "npc"), width = 0.1, height = 0.1))
+dev.off()

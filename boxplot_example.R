@@ -14,15 +14,5 @@ df = data.frame(Subject = c(52,53,53,54,54,55,56,56,57,52,53,53,54,54,55,56,56,5
 p = ggplot(df, aes(drive, pp)) + geom_boxplot(aes(fill = drive), show.legend = TRUE) + labs(title = "", y="", x="") + theme(legend.position = "bottom", legend.title = element_blank()) + scale_fill_manual(values = c("green", "grey")) + scale_x_discrete(labels = c("CD", "ND"))
 p2 = ggplot(df, aes(drive, pp)) + geom_boxplot(aes(fill = drive[1])) + labs(title = "", y="", x="")
 
-
-# p.legend = g_legend(p)
-# p = p + theme(legend.position="none")
-# p2 = p2 + theme(legend.position="none")
 hs = c(9/10, 1/10)
 grid.arrange(p, p2, ncol = 2, heights = hs)
-
-
-
-
-# p = ggplot(df, aes(drive, pp)) + geom_boxplot(fill = c("green","grey")) + labs(title = "", y="", x="")
-# p = p + theme(plot.title = element_text(hjust = 0.5, size = rel(2)), plot.margin=unit(c(0,1,0.5,0.5), "cm"), legend.position = "bottom", axis.text.y = element_text(size = 10), axis.title.y = element_text(size = 13), panel.background = element_rect(fill = "#FFFF0044", colour = "grey50"), panel.grid.minor = element_blank(), panel.grid.major = element_blank(), axis.title.x = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank())
